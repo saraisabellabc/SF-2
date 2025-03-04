@@ -29,7 +29,7 @@ def getNewPuzzle(n):
 
 
 
-def findEmptyFile(puzzle):
+def findEmptyTile(puzzle):
     for row in range(len(puzzle)):
         for column in range(len(puzzle[row])):
             if '  ' == puzzle[row][column] :
@@ -38,7 +38,7 @@ def findEmptyFile(puzzle):
 
 
 def nextMove(puzzle):
-    row, col = findEmptyFile(puzzle)
+    row, col = findEmptyTile(puzzle)
     n = len(puzzle)
     valid_moves = {}
     
@@ -52,13 +52,14 @@ def nextMove(puzzle):
         valid_moves['D'] = '(D)'
     
     while True:
+        displayBoard(puzzle)
         move_list = []
         for i in ['W','A', 'S', 'D']:
             move_list.append(valid_moves.get(i, '( )'))
-        #move_input = ' '.join(move_list)
         move_input = move_list
         print(f"                          {move_input[0]}")
         answer_input = input(f"Enter WASD (or QUIT): {' '.join(move_input[1:])} \n").strip().upper()
+        print(str(answer_input))
 
         
         
@@ -90,3 +91,9 @@ def displayBoard(board_lst):
                     vertical_div*n + '|\n'
     draw_board += horizontal_div
     print(draw_board.format(*labels))
+
+
+n = int(input("Enter the size of the puzzle (n x n): "))
+puzzle = getNewPuzzle(n)
+nextMove(puzzle)  
+    
