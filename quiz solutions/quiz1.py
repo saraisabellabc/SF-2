@@ -1,7 +1,7 @@
 def isPrime(n:int)-> bool:
     if n < 2:
         return False
-    for i in range(int(n**0.5)+1):
+    for i in range(2, int(n**0.5)+1):
         if n % i == 0:
             return False
     return True
@@ -13,6 +13,6 @@ n = 2
 while len(primes) < 100:
     if isPrime(n):
         primes.append(n)
-    else:
-        n += 1 
+    n += 1 
+print(primes)
     

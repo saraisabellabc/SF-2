@@ -1,0 +1,3 @@
+isabella,,bc,,95,,93,,91
+maha,,fifi,,93,,91,,94
+lili,,jiji,,74,,83,,79
