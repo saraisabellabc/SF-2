@@ -5,7 +5,7 @@ a dictionary of dictionaries.  The outer dictionary key is the account
 number.  The inner dictionary key is the last name and the value is 
 the balance.  Print the final dictionary.  
 '''
-'''
+
 output_file = open('accounts.txt', 'w')
 for i in range(5):
      line = input('accounts info: ')
@@ -29,7 +29,7 @@ for line in output_file:
      #d_outer[line[0]] = {line[1]: line[2]}
 
 print(d_outer)
-'''
+
 # Question 2
 '''
 (a) Open a file called grades.txt for writing that will hold student 
@@ -41,11 +41,11 @@ print(d_outer)
     writing to it.  
 
 '''
-# output_file = open('grades.txt', 'w')
-# for i in range(3):
-#      firstname, lastname, exam1grade, exam2grade, exam3grade = input('Grade information : ').split()
-#      output_file.write(firstname + ',' + lastname + ',' + exam1grade + ',' + exam2grade + ',' + exam3grade + '\n')
-# output_file.close()
+output_file = open('grades.txt', 'w')
+for i in range(3):
+     firstname, lastname, exam1grade, exam2grade, exam3grade = input('Grade information : ').split()
+     output_file.write(firstname + ',' + lastname + ',' + exam1grade + ',' + exam2grade + ',' + exam3grade + '\n')
+output_file.close()
 
 
 '''
@@ -60,36 +60,36 @@ print(d_outer)
          Do this for exam2grade and exam3grade as well.  
     (iii) the average of the average of all 3 exams for all students.  
 '''
-# # store data 
-# output_file = open('grades.txt', 'r')
-# d_info = {}
-# for line in output_file:
-#     firstname, lastname, exam1grade, exam2grade, exam3grade = line.strip(',,').split()
-#     d_info[(firstname, lastname)] = [int(exam1grade), int(exam2grade), int(exam3grade)]
+# store data 
+output_file = open('grades.txt', 'r')
+d_info = {}
+for line in output_file:
+    firstname, lastname, exam1grade, exam2grade, exam3grade = line.strip(',,').split()
+    d_info[(firstname, lastname)] = [int(exam1grade), int(exam2grade), int(exam3grade)]
 
-# #b)
-# #i) ii) iii)
-# for i in range(3):
-#      for value in d_info.values() :
-#         mini = min(value[i])
-# print(mini)
+#b)
+#i) ii) iii)
+for i in range(3):
+     for value in d_info.values() :
+        mini = min(value[i])
+print(mini)
 
-# for i in range(3):
-#      for value in d_info.values() :
-#         maxi = max(value[i])
-# print(maxi)
+for i in range(3):
+     for value in d_info.values() :
+        maxi = max(value[i])
+print(maxi)
 
-# for i in range(3) :
-#     grades = (d_info.values()) / len(d_info)
-#     for value in grades:
-#         averages_exam =sum(value[i])
+for i in range(3) :
+    grades = (d_info.values()) / len(d_info)
+    for value in grades:
+        averages_exam =sum(value[i])
 
 
-# for student in d_info:
-#     average_student = sum(d_info[student ]) / 3 
+for student in d_info:
+    average_student = sum(d_info[student ]) / 3 
 
-# print(averages_exam)
-# print(average_student)
+print(averages_exam)
+print(average_student)
 
 
 

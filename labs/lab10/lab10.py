@@ -7,7 +7,7 @@ Open your story file from class for reading.
     in the story according to their frequence from highest to lowest. Display the results.
 '''
 
-input_file = open('labs/story.txt', 'r')
+input_file = open('story.txt', 'r')
 count = 0
 words = {}
 for line in input_file:
@@ -16,32 +16,6 @@ for line in input_file:
     for word in lst:
         word = word.lower().strip(".,-()!?'\"")
         words[word] = words.get(word, 0) + 1
-
-print(count)
-
-# max_w = max(words.values())
-# for key, value in words.items():
-#     if value == max_w:
-#         sorted_words[key] = value
-
-lst = []
-v = 0
-for key, value in words.items():
-    if value > v:
-        lst.append(words[key])
-print(lst)
-
-
- 
-
-
-
-# words = {}
-# for line in input_file:
-#     list = line.split()
-#     print(list)
-    
-
 
 
 

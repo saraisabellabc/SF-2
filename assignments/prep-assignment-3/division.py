@@ -16,4 +16,5 @@ while flag:
         print('attempted to put another type instead of int\n')
     else:
         print(f'{result: .2f}')
+        break
 
