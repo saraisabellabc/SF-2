@@ -23,7 +23,7 @@ def combine2(d1, d2):
         if k in d2:
             for key in d1[k]:
                 if key in d2[k]:
-                    new_d[key] = sum(d1[key]) + sum(d2[key])
+                    new_d[key] = sum(d1[k][key]) + sum(d2[k][key])
 
 
 
@@ -49,14 +49,40 @@ create a file birthdays.py that will do the following:
     { 'February': {'23': ['Bob']},
     'May': {'3': ['Katie'], '8': ['Paul', 'Lucy']} }
 '''
-
+def birthday():
+    bday_d = {}
+    while True:
+        birthdate = input('month day name (''stop'' to quit):')
+        if birthdate == 'stop':
+            break
+        birthdate = birthdate.split()
+        month, day, name = birthdate[0], birthdate[1], birthdate[2]
+        if month in bday_d:
+            if day in bday_d[month]:
+                bday_d[month][day].append(name)
+            else:
+                bday_d[month][day] = [name]
+        else:
+            bday_d[month] = {day : [name]}
+    print(bday_d)
+birthday()
 '''
 (b) Write a function called mostCovered that will take 
 the dictionary entered by the user in part (a) and
 return the month that has the most number of 
 birthdays
 '''
-#def mostCovered(d):
+def mostCovered(bday_d):
+    current_best = ['None', 0]
+    for month in bday_d:
+        sum_dates = 0
+        for day in bday_dd[month]:
+            sum_dates += len(bday_d[month][day])
+        if current_best[1] < sum_dates:
+            current_best = [month, sum_dates]
+    print(current_best[0])
+    return current_best
+mostCovered()
 
 '''
 (c) write a function called invert() that will take
