@@ -1,0 +1,16 @@
+Short Answer:
+
+Write a Python function that opens a text file called `data.txt`, reads all lines, and returns the number of lines that contain the word "error" (case insensitive).
+
+Constraints:
+- Do not use comprehensions, filter, map, enumerate, global variables, or `with` when opening the file.
+- Assume that the file `data.txt` exists in the same directory and contains plain text.
+
+Example content of data.txt:
+----------------------------
+This is a test.
+An error has occurred.
+All systems go.
+Another ERROR found.
+
+Expected output: 2
