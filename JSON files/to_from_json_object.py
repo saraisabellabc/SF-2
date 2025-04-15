@@ -1,7 +1,7 @@
 import json
 
 # convert from JSON to Python
-student_record = '{"name": "Lucy", "year" : 1, "college": Dawson}'
+student_record = '{"name": "Lucy", "year" : 1, "college": "Dawson"}'
 parsed_record = json.loads(student_record) # parse student records
 
 print(parsed_record)
@@ -11,8 +11,9 @@ print(type(parsed_record))
 student_dict = {'name':'Lucy', 'year': 1, 'college': 'Dawson' }
 student_record_json = json.dumps(student_dict)
 print(student_record_json)
+print(type(student_record_json))
 
-print('/n/n')
+print('\n\n')
 print(json.dumps({'name':'Lucy', 'year': 1})) # dict --> JSON OBJECTS
 print(json.dumps(['red', 'green', 'blue'])) # list --> ARRAYS
 print(json.dumps(('apples', [1, 2, 3]))) # tuples -- > ARRAYS

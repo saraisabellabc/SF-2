@@ -1,6 +1,6 @@
 import json 
  
- # deserialization of JSON => conversion of JSON object to intx
+ # deserialization of JSON => conversion of JSON object to its
  #repsectuve Python object 
 
 input_file = open('JSON files/students.json', 'r')
