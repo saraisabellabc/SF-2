@@ -9,9 +9,10 @@ def new_sighting(kinds, counts, sighting):
 kinds = ['Monarch','Painted Lady', 'Bronze Copeper', 'Orange Sulphur']
 counts = [5, 2, 12, 7]
 
+new_sighting(kinds, counts, 'Monarch')
 for i in range(len(kinds)):
     print(f'{kinds[i]}: {counts[i]}')
 
-print()
-new_sighting(kinds, counts, 'Monarch')
+
+
 

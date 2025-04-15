@@ -35,7 +35,7 @@ def avgTempMonth(d, month):
     month_dict = {'JAN': 0, 'FEB': 1, 'MAR': 2, 'APR': 3, 'MAY': 4, 'JUN': 5, 'JUL': 6, 'AUG': 7, 'SEP': 8, 'OCT': 9, 'NOV': 10, 'DEC': 11}
     month_index = month_dict[month]
     
-    total = 0
+    total = 0 
     n_years = len(d)
     for year in d:
         total += d[year][month_index]

@@ -1,5 +1,6 @@
 '''
-Firgus is behind on several assignements. After rumaging through his backpack , he realizes that he has N items, each of which he records as strings. 
+Firgus is behind on several assignements. After rumaging through his backpack , he realizes that he has N items, 
+each of which he records as strings. 
 he has M upcoming assignements, the i-th of which requires Ti required items to complete, r1, r2, r3 ... rTi 
 if he has all Ti required items, he can complete the i-th assignement. Otherwise, he flunks it .
 how mNY ASSIGNEMENTS CAN FIGUS COMPLETE?

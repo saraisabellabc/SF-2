@@ -3,9 +3,8 @@ def search(collection, target):
     '''
     search collectiion for target
     '''
-    for i in collection:
-        found = target in collection
-        return found
+    found = target in collection
+    return found
     
 lst = list(range(1, 50000))
 s = set(range(1, 50000))
