@@ -70,13 +70,13 @@ not a number, and print a friendly error message.  Test your program by entering
 numbers and then by entering some text instead of a number.  
 '''
 
-try:
-    first_number = int(input("First number: "))
-    second_number = int(input("Second Number: "))
-except ValueError:
-    print("Enter a numerical value")
-else:
-    print(f"Sum: {first_number + second_number}")
+# try:
+#     first_number = int(input("First number: "))
+#     second_number = int(input("Second Number: "))
+# except ValueError:
+#     print("Enter a numerical value")
+# else:
+#     print(f"Sum: {first_number + second_number}")
 # Question 4
 '''
 Using the json module write student information to the file in JSON format.  
@@ -93,16 +93,16 @@ Output the gradebook_dict in JSON format to the file grades.json.
 import json
 
 output_file = open('grades.json', 'w')
-list_d = []
+gradebook_dict = {'students': []}
 while True:
-    line = input("'first_name' 'last_name' 'exam1' 'exam2' 'exam3' (or q to quit)")
+    line = input("'first_name' 'last_name' 'exam1' 'exam2' 'exam3' (or q to quit) : ")
     if line == 'q':
         break
     first_name, last_name, exam1, exam2, exam3 = line.split()
     d = {'first_name': first_name, 'last_name': last_name, 'exam1': int(exam1), 'exam2': int(exam2), 'exam3': int(exam3)}
-    list_d.append(d)
+    gradebook_dict['students'].append(d)
     
-json.dump(list_d, output_file)
+json.dump(gradebook_dict, output_file)
 output_file.close()
 # Question 5
 '''
@@ -111,3 +111,35 @@ question.  Display the data in tabular format, including an additional
 column showing each student's average to the right of the student's three
 exam grades and an additional row showing the class average on each exam.  '
 '''
+input_file = open('grades.json', 'r')
+student_dict = json.load(input_file)
+
+for students in student_dict['students']:
+    average_student = 0
+    av_1 = 0
+    av_2 = 0
+    av_3 = 0
+    for key in students:
+        if type(students[key]) == int :
+            average_student += students[key]
+    students['average'] = average_student // 3
+        
+    
+    av_1 += students['exam1']
+
+    av_2 += students['exam2']
+  
+    av_3 += students['exam3']
+class_av1 = av_1/ len(student_dict['students'])
+class_av2 = av_2/ len(student_dict['students'])
+class_av3 = av_3 / len(student_dict['students'])
+
+    
+print('First Name Last Name Exam1 Exam2 Exam3 Average')
+for student in student_dict['students']:
+    print(student['first_name'] + '  ' + student['last_name'] + '  ' + str(student['exam1']) + '  ' + str(student['exam2']) + '  ' + str(student['exam3']) + '  ' + str(student['average']))
+
+# print(f'\t   {av_1}  {av_2}  {av_3}')
+# for students in student_dict['students']:
+#     for key in students:
+#         print(f'{students[key]}')

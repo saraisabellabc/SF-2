@@ -54,16 +54,16 @@ class Fraction:
         # self.denominator = denominator
     def __repr__(self):
         return f'{self.numerator} / {self.denominator}'
-
+    
     def __add__(self, other_fraction: Fraction ) -> Fraction :
         f_num = (self.numerator * other_fraction.numerator) + (other_fraction.numerator * self.denominator)
         f_denom = (self.denominator * other_fraction.denominator) 
-        return f_num + f_denom
+        return Fraction(f_num + f_denom)
     
     def __sub__(self, other_fraction: Fraction) -> Fraction:
         f_num = (self.numerator * other_fraction.numerator) + (other_fraction.numerator * self.denominator)
         f_denom = (self.denominator * other_fraction.denominator)
-        return f_num - f_denom
+        return Fraction(f_num - f_denom)
     
     # for != <= >= < > == we can only implement < > == which infer all the others
     def __eq__(self, other: Fraction) -> bool:

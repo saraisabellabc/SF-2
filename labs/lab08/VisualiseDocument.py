@@ -25,6 +25,8 @@ def combine2(d1, d2):
                 if key in d2[k]:
                     new_d[key] = sum(d1[k][key]) + sum(d2[k][key])
 
+    return new_d
+
 
 
 combine2(d1, d2)
@@ -55,17 +57,18 @@ def birthday():
         birthdate = input('month day name (''stop'' to quit):')
         if birthdate == 'stop':
             break
-        birthdate = birthdate.split()
-        month, day, name = birthdate[0], birthdate[1], birthdate[2]
-        if month in bday_d:
-            if day in bday_d[month]:
-                bday_d[month][day].append(name)
-            else:
-                bday_d[month][day] = [name]
         else:
-            bday_d[month] = {day : [name]}
+            birthdate = birthdate.split()
+            month, day, name = birthdate[0], birthdate[1], birthdate[2]
+            if month in bday_d:
+                if day in bday_d[month]:
+                    bday_d[month][day].append(name)
+                else:
+                    bday_d[month][day] = [name]
+            else:
+                bday_d[month] = {day : [name]}
     print(bday_d)
-birthday()
+
 '''
 (b) Write a function called mostCovered that will take 
 the dictionary entered by the user in part (a) and
@@ -76,13 +79,15 @@ def mostCovered(bday_d):
     current_best = ['None', 0]
     for month in bday_d:
         sum_dates = 0
-        for day in bday_dd[month]:
+        for day in bday_d[month]:
             sum_dates += len(bday_d[month][day])
         if current_best[1] < sum_dates:
             current_best = [month, sum_dates]
     print(current_best[0])
     return current_best
-mostCovered()
+
+
+
 
 '''
 (c) write a function called invert() that will take
@@ -98,5 +103,13 @@ Sample Output:
 'Lucy': ('May', '8')}
 '''
 
+def invert(d):
+    invert_d = {}
+    for month in d:
+        for day in d[month]:
+            for person in d[month][day]:
+                invert_d[person] = (month, day)
+    print(invert_d)
+    return invert_d
 
-#def invert(month):
+#invert({ 'February': {'23': ['Bob']}, 'May': {'3': ['Katie'], '8': ['Paul', 'Lucy']} })

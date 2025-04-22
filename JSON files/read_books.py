@@ -67,6 +67,7 @@ try:
     longest = None
     words = []
     sum_w = 0
+    max_count = 0
 
     for line in book1:
         line = line.strip()
@@ -119,9 +120,9 @@ try:
     if recc != 0:
         average_marks = round(punct_marks / recc, 2)
     else:
-        average_marks = 0  # Or any other handling you prefer
+        average_marks = 0  
 
-    # Calculate average word length
+    # average word length
     average = sum(len(word) for word in words) / len(words) if words else 0
 except FileNotFoundError:
     print('file not found')
@@ -130,3 +131,5 @@ except ZeroDivisionError:
 
     print('tried to divide by 0')
 
+print(count_words)
+print(average_marks)

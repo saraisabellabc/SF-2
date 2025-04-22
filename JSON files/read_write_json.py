@@ -3,7 +3,7 @@ import json
  # deserialization of JSON => conversion of JSON object to its
  #repsectuve Python object 
 
-input_file = open('JSON files/students.json', 'r')
+input_file = open('students.json', 'r')
 data = json.load(input_file) #loaded into data, from top to bottom, cursor at the bottom
 print(data)
 
