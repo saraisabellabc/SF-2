@@ -2,7 +2,7 @@ from pet import Pet
 from omnivore import Omnivore
 from mammal import Mammal
 
-class Dog( ):
+class Dog(Mammal, Omnivore, Pet ):
     def __init__(self, legs = 4, ears = 2):
         super().__init__(legs)
         self.ears = ears 
